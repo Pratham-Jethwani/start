@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore resolved consumer cases and brand trust scores">
+    <title>Explore Cases - Resolve360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="explore.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" fill="url(#logo-gradient)" />
+                    <path d="M16 8L20 16L16 24L12 16L16 8Z" fill="white" />
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#0B63FF" />
+                            <stop offset="100%" stop-color="#06B6D4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Resolve360</span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#how-it-works" class="nav-link">How it works</a>
+                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="submit-case.html" class="btn btn-primary">Submit a Case</a>
+                <a href="signin.html" class="nav-link">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="explore-hero">
+        <div class="container">
+            <h1 class="hero-title">Explore Cases</h1>
+            <p class="hero-subtitle">Browse verified consumer disputes and see how brands respond publicly</p>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
+                    <path d="M13 13L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <input type="text" class="search-input" placeholder="Search by brand, product, or case ID..."
+                    id="searchInput">
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Results -->
+    <section class="explore-content">
+        <div class="container">
+            <div class="explore-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                        <button class="btn-text" onclick="clearFilters()">Clear all</button>
+                    </div>
+
+                    <!-- Status Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Status</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="resolved" checked>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Resolved</span>
+                            <span class="filter-count">847</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="pending">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Pending</span>
+                            <span class="filter-count">124</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="disputed">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Disputed</span>
+                            <span class="filter-count">18</span>
+                        </label>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Category</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="electronics">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Electronics</span>
+                            <span class="filter-count">342</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="apparel">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Apparel</span>
+                            <span class="filter-count">198</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="home">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Home & Furniture</span>
+                            <span class="filter-count">156</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="services">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Services</span>
+                            <span class="filter-count">89</span>
+                        </label>
+                    </div>
+
+                    <!-- Verification Level -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Verification</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="high" checked>
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">High</span>
+                            <span class="filter-count">721</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="medium">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">Medium</span>
+                            <span class="filter-count">198</span>
+                        </label>
+                    </div>
+
+                    <!-- Date Range -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Date Range</h4>
+                        <select class="filter-select">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">Last year</option>
+                            <option value="all">All time</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Results Area -->
+                <main class="results-main">
+                    <!-- Results Header -->
+                    <div class="results-header">
+                        <div class="results-info">
+                            <h2 class="results-count">847 cases found</h2>
+                            <p class="results-subtitle">Showing resolved cases from the last 30 days</p>
+                        </div>
+
+                        <div class="results-sort">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="recent">Most Recent</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="fastest">Fastest Resolution</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Case Cards Grid -->
+                    <div class="cases-grid" id="casesGrid">
+                        <!-- Case Card 1 -->
+                        <a href="case-detail.html" class="case-card">
+                            <div class="case-card-header">
+                                <div class="status-badge resolved">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="6" fill="currentColor" />
+                                        <path d="M4 7L6 9L10 5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Resolved
+                                </div>
+                                <div class="verification-badge high">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M3 6L5 8L9 4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Verified
+                                </div>
+                            </div>
+
+                            <h3 class="case-card-title">Defective wireless earbuds — no response to warranty claim</h3>
+
+                            <div class="case-card-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <rect x="2" y="3" width="10" height="9" rx="1" stroke="currentColor"
+                                            stroke-width="1.2" />
+                                        <path d="M2 5H12" stroke="currentColor" stroke-width="1.2" />
+                                    </svg>
+                                    Electronics
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    3 days ago
+                                </span>
+                            </div>
+
+                            <p class="case-card-excerpt">Purchased earbuds 3 months ago. Left earbud stopped working
+                                after 6 weeks. Contacted support twice with no response...</p>
+
+                            <div class="case-card-footer">
+                                <div class="brand-info">
+                                    <div class="brand-avatar">TB</div>
+                                    <span class="brand-name">TechBrand Inc.</span>
+                                </div>
+                                <div class="resolution-time">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <span>2 days</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Case Card 2 -->
+                        <a href="case-detail.html" class="case-card">
+                            <div class="case-card-header">
+                                <div class="status-badge resolved">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="6" fill="currentColor" />
+                                        <path d="M4 7L6 9L10 5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Resolved
+                                </div>
+                                <div class="verification-badge high">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M3 6L5 8L9 4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Verified
+                                </div>
+                            </div>
+
+                            <h3 class="case-card-title">Wrong size delivered — seller refusing exchange</h3>
+
+                            <div class="case-card-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <rect x="2" y="3" width="10" height="9" rx="1" stroke="currentColor"
+                                            stroke-width="1.2" />
+                                        <path d="M2 5H12" stroke="currentColor" stroke-width="1.2" />
+                                    </svg>
+                                    Apparel
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    5 days ago
+                                </span>
+                            </div>
+
+                            <p class="case-card-excerpt">Ordered size M, received size S. Seller claims I ordered wrong
+                                size despite screenshot proof. Refusing exchange...</p>
+
+                            <div class="case-card-footer">
+                                <div class="brand-info">
+                                    <div class="brand-avatar">SH</div>
+                                    <span class="brand-name">StyleHub</span>
+                                </div>
+                                <div class="resolution-time">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <span>1 day</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Case Card 3 -->
+                        <a href="case-detail.html" class="case-card">
+                            <div class="case-card-header">
+                                <div class="status-badge resolved">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="6" fill="currentColor" />
+                                        <path d="M4 7L6 9L10 5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Resolved
+                                </div>
+                                <div class="verification-badge high">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M3 6L5 8L9 4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Verified
+                                </div>
+                            </div>
+
+                            <h3 class="case-card-title">Damaged furniture delivered — no replacement offered</h3>
+
+                            <div class="case-card-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <rect x="2" y="3" width="10" height="9" rx="1" stroke="currentColor"
+                                            stroke-width="1.2" />
+                                        <path d="M2 5H12" stroke="currentColor" stroke-width="1.2" />
+                                    </svg>
+                                    Home & Furniture
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    1 week ago
+                                </span>
+                            </div>
+
+                            <p class="case-card-excerpt">Sofa delivered with visible scratches and dents. Reported
+                                immediately with photos. Seller offered only 10% discount...</p>
+
+                            <div class="case-card-footer">
+                                <div class="brand-info">
+                                    <div class="brand-avatar">HE</div>
+                                    <span class="brand-name">HomeEssentials</span>
+                                </div>
+                                <div class="resolution-time">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <span>3 days</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- More case cards would be dynamically loaded -->
+                        <a href="case-detail.html" class="case-card">
+                            <div class="case-card-header">
+                                <div class="status-badge pending">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    Pending
+                                </div>
+                                <div class="verification-badge high">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M3 6L5 8L9 4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Verified
+                                </div>
+                            </div>
+
+                            <h3 class="case-card-title">Subscription charged after cancellation</h3>
+
+                            <div class="case-card-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <rect x="2" y="3" width="10" height="9" rx="1" stroke="currentColor"
+                                            stroke-width="1.2" />
+                                        <path d="M2 5H12" stroke="currentColor" stroke-width="1.2" />
+                                    </svg>
+                                    Services
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    2 days ago
+                                </span>
+                            </div>
+
+                            <p class="case-card-excerpt">Cancelled subscription on Oct 15. Still charged on Nov 1. Have
+                                cancellation email confirmation...</p>
+
+                            <div class="case-card-footer">
+                                <div class="brand-info">
+                                    <div class="brand-avatar">SC</div>
+                                    <span class="brand-name">StreamCo</span>
+                                </div>
+                                <div class="sla-timer">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.2" />
+                                        <path d="M7 4V7L9 9" stroke="currentColor" stroke-width="1.2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <span>18h left</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="load-more">
+                        <button class="btn btn-outline btn-large">Load More Cases</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" fill="url(#footer-logo-gradient)" />
+                            <path d="M16 8L20 16L16 24L12 16L16 8Z" fill="white" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#0B63FF" />
+                                    <stop offset="100%" stop-color="#06B6D4" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>Resolve360</span>
+                    </div>
+                    <p class="footer-tagline">Transparent dispute resolution for the modern consumer.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <a href="index.html#how-it-works">How it works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="explore.html">Explore cases</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Resources</h4>
+                    <a href="#">Help center</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact us</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Privacy policy</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resolve360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="explore.js"></script>
+</body>
+
+</html>

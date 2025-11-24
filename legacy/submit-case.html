@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit your consumer dispute case - Get verified resolution publicly">
+    <title>Submit a Case - Resolve360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="submit-case.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" fill="url(#logo-gradient)" />
+                    <path d="M16 8L20 16L16 24L12 16L16 8Z" fill="white" />
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#0B63FF" />
+                            <stop offset="100%" stop-color="#06B6D4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Resolve360</span>
+            </div>
+
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wizard Container -->
+    <div class="wizard-container">
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="wizard-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">
+                        <span class="step-number">1</span>
+                        <svg class="step-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 10L8 13L15 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="step-label">Basic Info</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">
+                        <span class="step-number">2</span>
+                        <svg class="step-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 10L8 13L15 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="step-label">Verification</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">
+                        <span class="step-number">3</span>
+                        <svg class="step-check" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 10L8 13L15 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="step-label">Publish</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Basic Info -->
+            <div class="wizard-step active" id="step1">
+                <div class="step-header">
+                    <h1 class="step-title">Tell us about your issue</h1>
+                    <p class="step-subtitle">Upload your proof and we'll extract the details automatically</p>
+                </div>
+
+                <div class="wizard-content">
+                    <!-- Upload Area -->
+                    <div class="upload-section">
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <path d="M24 14V34M24 14L18 20M24 14L30 20" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8 34V38C8 40.2091 9.79086 42 12 42H36C38.2091 42 40 40.2091 40 38V34"
+                                        stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="upload-title">Drop files here or click to upload</h3>
+                            <p class="upload-hint">Upload invoice, receipts, photos, or chat screenshots</p>
+                            <p class="upload-formats">Supports: PDF, JPG, PNG, HEIC (max 10 files, 5MB each)</p>
+                            <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.heic" hidden>
+                            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                                Choose Files
+                            </button>
+                        </div>
+
+                        <!-- File Preview -->
+                        <div class="file-preview-container" id="filePreview" style="display: none;">
+                            <div class="file-preview-header">
+                                <h4>Uploaded Files</h4>
+                                <button class="btn-text" onclick="document.getElementById('fileInput').click()">+ Add
+                                    More</button>
+                            </div>
+                            <div class="file-list" id="fileList"></div>
+                        </div>
+
+                        <!-- Example Evidence -->
+                        <div class="evidence-examples">
+                            <h4 class="examples-title">Examples of good evidence:</h4>
+                            <div class="examples-grid">
+                                <div class="example-card">
+                                    <div class="example-icon">📄</div>
+                                    <span>Invoice/Receipt</span>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-icon">💬</div>
+                                    <span>Chat Screenshots</span>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-icon">📧</div>
+                                    <span>Email Thread</span>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-icon">📸</div>
+                                    <span>Product Photos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Fields -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="caseTitle" class="form-label">
+                                Case Title
+                                <span class="label-hint">(We'll suggest one based on your upload)</span>
+                            </label>
+                            <input type="text" id="caseTitle" class="form-input"
+                                placeholder="e.g., Defective wireless earbuds — no response to warranty claim"
+                                maxlength="120">
+                            <div class="char-counter">
+                                <span id="titleCounter">0</span>/120
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category" class="form-label">Category</label>
+                            <select id="category" class="form-select">
+                                <option value="">Select a category</option>
+                                <option value="electronics">Electronics & Gadgets</option>
+                                <option value="apparel">Apparel & Fashion</option>
+                                <option value="home">Home & Furniture</option>
+                                <option value="beauty">Beauty & Personal Care</option>
+                                <option value="services">Services</option>
+                                <option value="food">Food & Beverages</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                <input type="date" id="purchaseDate" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="purchaseChannel" class="form-label">Purchase Channel</label>
+                                <select id="purchaseChannel" class="form-select">
+                                    <option value="">Select channel</option>
+                                    <option value="brand-site">Brand Website</option>
+                                    <option value="marketplace">Marketplace (Amazon, Flipkart, etc.)</option>
+                                    <option value="retailer">Physical Retailer</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orderId" class="form-label">
+                                Order ID
+                                <span class="label-optional">(Optional - we'll try to extract this)</span>
+                            </label>
+                            <input type="text" id="orderId" class="form-input" placeholder="e.g., ORD-123456">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Describe your issue</label>
+                            <textarea id="description" class="form-textarea" rows="5"
+                                placeholder="Explain what happened, what you've tried, and what resolution you're seeking..."
+                                maxlength="1000"></textarea>
+                            <div class="char-counter">
+                                <span id="descCounter">0</span>/1000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-actions">
+                    <button class="btn btn-outline" onclick="window.location.href='index.html'">Cancel</button>
+                    <button class="btn btn-primary" id="step1Next">
+                        Continue to Verification
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Verification -->
+            <div class="wizard-step" id="step2">
+                <div class="step-header">
+                    <h1 class="step-title">Verifying your evidence</h1>
+                    <p class="step-subtitle">We're extracting and verifying your order details</p>
+                </div>
+
+                <div class="wizard-content">
+                    <!-- OCR Progress -->
+                    <div class="verification-progress" id="verificationProgress">
+                        <div class="verification-icon">
+                            <svg class="spinner" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="28" stroke="#E2E8F0" stroke-width="4" />
+                                <path d="M32 4C16.536 4 4 16.536 4 32" stroke="url(#spinner-gradient)" stroke-width="4"
+                                    stroke-linecap="round" />
+                                <defs>
+                                    <linearGradient id="spinner-gradient" x1="4" y1="32" x2="32" y2="4">
+                                        <stop offset="0%" stop-color="#0B63FF" />
+                                        <stop offset="100%" stop-color="#06B6D4" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="verification-status">Extracting your order details...</h3>
+                        <p class="verification-hint">This usually takes 10–30 seconds</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Extracted Data (shown after OCR) -->
+                    <div class="extracted-data" id="extractedData" style="display: none;">
+                        <div class="success-banner">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#10B981" />
+                                <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <div>
+                                <h4>Verification complete!</h4>
+                                <p>We've extracted the following details. Please review and edit if needed.</p>
+                            </div>
+                        </div>
+
+                        <div class="extracted-fields">
+                            <div class="field-card">
+                                <label class="field-label">Seller/Brand</label>
+                                <input type="text" class="field-input" id="extractedBrand" value="TechBrand Inc.">
+                                <div class="field-confidence">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M5 8L7 10L11 6" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>High confidence (OCR)</span>
+                                </div>
+                            </div>
+
+                            <div class="field-card">
+                                <label class="field-label">Invoice Number</label>
+                                <input type="text" class="field-input" id="extractedInvoice" value="INV-2024-847291">
+                                <div class="field-confidence">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M5 8L7 10L11 6" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>High confidence (OCR)</span>
+                                </div>
+                            </div>
+
+                            <div class="field-card">
+                                <label class="field-label">Purchase Date</label>
+                                <input type="date" class="field-input" id="extractedDate" value="2024-08-15">
+                                <div class="field-confidence">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M5 8L7 10L11 6" stroke="#10B981" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span>High confidence (OCR)</span>
+                                </div>
+                            </div>
+
+                            <div class="field-card">
+                                <label class="field-label">Amount</label>
+                                <input type="text" class="field-input" id="extractedAmount" value="₹4,999">
+                                <div class="field-confidence medium">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <circle cx="8" cy="8" r="6" stroke="#F59E0B" stroke-width="2" />
+                                        <path d="M8 5V8M8 11H8.01" stroke="#F59E0B" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <span>Medium confidence - please verify</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Settings -->
+                        <div class="privacy-section">
+                            <h4 class="section-title">Privacy Settings</h4>
+
+                            <div class="privacy-option">
+                                <div class="option-header">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="anonymize">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Anonymize my name before publishing</span>
+                                    </label>
+                                </div>
+                                <p class="option-description">Your name will be replaced with initials (e.g., "John D.")
+                                </p>
+                            </div>
+
+                            <div class="privacy-option">
+                                <div class="option-header">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="allowContact" checked>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Allow platform to contact seller on my behalf</span>
+                                    </label>
+                                </div>
+                                <p class="option-description">We'll notify the seller and request a response</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-actions">
+                    <button class="btn btn-outline" id="step2Back">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 10H4M4 10L9 5M4 10L9 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Back
+                    </button>
+                    <button class="btn btn-primary" id="step2Next" disabled>
+                        Continue to Publish
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Publish -->
+            <div class="wizard-step" id="step3">
+                <div class="step-header">
+                    <h1 class="step-title">Review and publish your case</h1>
+                    <p class="step-subtitle">Choose visibility and confirm your submission</p>
+                </div>
+
+                <div class="wizard-content">
+                    <!-- Visibility Options -->
+                    <div class="visibility-section">
+                        <h4 class="section-title">Visibility</h4>
+
+                        <div class="visibility-options">
+                            <label class="visibility-card">
+                                <input type="radio" name="visibility" value="public" checked>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                stroke="currentColor" stroke-width="2" />
+                                            <path
+                                                d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z"
+                                                stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                        <h5>Public</h5>
+                                        <span class="recommended-badge">Recommended</span>
+                                    </div>
+                                    <p>Visible to everyone. Brands respond faster to public cases.</p>
+                                </div>
+                            </label>
+
+                            <label class="visibility-card">
+                                <input type="radio" name="visibility" value="public-anon">
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                                            <path
+                                                d="M6 21V19C6 16.7909 7.79086 15 10 15H14C16.2091 15 18 16.7909 18 19V21"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                        <h5>Public (Anonymized)</h5>
+                                    </div>
+                                    <p>Visible to everyone, but your personal details are hidden.</p>
+                                </div>
+                            </label>
+
+                            <label class="visibility-card">
+                                <input type="radio" name="visibility" value="private">
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor"
+                                                stroke-width="2" />
+                                            <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11"
+                                                stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                        <h5>Private</h5>
+                                    </div>
+                                    <p>Only visible to you, the brand, and our mediation team.</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Preferences -->
+                    <div class="preferences-section">
+                        <h4 class="section-title">Notification Preferences</h4>
+
+                        <div class="preference-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailNotif" checked>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Email notifications for updates</span>
+                            </label>
+
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="smsNotif">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">SMS notifications (optional)</span>
+                            </label>
+                        </div>
+
+                        <div class="phone-input" id="phoneInput" style="display: none;">
+                            <input type="tel" class="form-input" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+
+                    <!-- Case Preview -->
+                    <div class="case-preview">
+                        <h4 class="section-title">Preview</h4>
+                        <div class="preview-card">
+                            <div class="preview-header">
+                                <div class="case-status verified">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M5.5 8L7.5 10L11 6" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Verified Case
+                                </div>
+                                <div class="case-id">#R360-XXXX</div>
+                            </div>
+                            <h3 class="preview-title" id="previewTitle">Your case title will appear here</h3>
+                            <div class="preview-meta">
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <rect x="3" y="4" width="10" height="9" rx="1" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <path d="M3 6H13" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                    <span id="previewCategory">Category</span>
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
+                                        <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    Just now
+                                </span>
+                            </div>
+                            <p class="preview-description" id="previewDescription">Your description will appear here...
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="terms-section">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="acceptTerms">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                I confirm this information is accurate and I accept the
+                                <a href="#" class="text-link">Terms of Service</a> and
+                                <a href="#" class="text-link">Privacy Policy</a>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="wizard-actions">
+                    <button class="btn btn-outline" id="step3Back">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16 10H4M4 10L9 5M4 10L9 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Back
+                    </button>
+                    <button class="btn btn-primary btn-large" id="publishCase" disabled>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 10L8 15L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Publish Case — Free
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal (shown after submission) -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" fill="#10B981" />
+                    <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h2>Case Published Successfully!</h2>
+            <p>We've notified the seller and will keep you updated on any responses.</p>
+
+            <div class="success-details">
+                <div class="detail-item">
+                    <span class="detail-label">Case ID:</span>
+                    <span class="detail-value">#R360-4892</span>
+                    <button class="btn-icon" onclick="copyToClipboard('#R360-4892')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect x="5" y="5" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Expected Response:</span>
+                    <span class="detail-value">Within 48 hours</span>
+                </div>
+            </div>
+
+            <div class="success-actions">
+                <a href="case-detail.html" class="btn btn-primary btn-large">View Your Case</a>
+                <button class="btn btn-outline" onclick="shareCase()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M15 6C16.6569 6 18 4.65685 18 3C18 1.34315 16.6569 0 15 0C13.3431 0 12 1.34315 12 3C12 4.65685 13.3431 6 15 6Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        <path
+                            d="M5 13C6.65685 13 8 11.6569 8 10C8 8.34315 6.65685 7 5 7C3.34315 7 2 8.34315 2 10C2 11.6569 3.34315 13 5 13Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        <path
+                            d="M15 20C16.6569 20 18 18.6569 18 17C18 15.3431 16.6569 14 15 14C13.3431 14 12 15.3431 12 17C12 18.6569 13.3431 20 15 20Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        <path d="M7.5 11.5L12.5 15M12.5 5L7.5 8.5" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    Share Case
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="submit-case.js"></script>
+</body>
+
+</html>

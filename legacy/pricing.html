@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparent pricing for brands - Choose the plan that fits your needs">
+    <title>Pricing & Plans - Resolve360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pricing.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" fill="url(#logo-gradient)" />
+                    <path d="M16 8L20 16L16 24L12 16L16 8Z" fill="white" />
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                            <stop offset="0%" stop-color="#0B63FF" />
+                            <stop offset="100%" stop-color="#06B6D4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">Resolve360</span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#how-it-works" class="nav-link">How it works</a>
+                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="submit-case.html" class="btn btn-primary">Get Help</a>
+                <a href="signin.html" class="nav-link">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Simple, transparent pricing</h1>
+                <p class="hero-subtitle">For consumers, it's always free. For brands, choose the plan that fits your
+                    volume.</p>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Annual <span class="save-badge">Save 20%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Free</h3>
+                        <div class="plan-price">
+                            <span class="price">₹0</span>
+                            <span class="period">forever</span>
+                        </div>
+                        <p class="plan-description">For consumers filing cases</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Unlimited case submissions</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>AI-powered verification</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Public thread visibility</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Email notifications</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Case tracking dashboard</span>
+                        </li>
+                    </ul>
+
+                    <a href="submit-case.html" class="btn btn-outline btn-large">Submit a Case</a>
+                </div>
+
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Starter</h3>
+                        <div class="plan-price">
+                            <span class="price monthly-price">₹9,999</span>
+                            <span class="price annual-price" style="display: none;">₹7,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">For small businesses</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Up to 50 cases/month</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>48-hour response SLA</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Basic analytics dashboard</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Email integration</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>2 team members</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Trust badge for website</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary btn-large">Start Free Trial</a>
+                </div>
+
+                <!-- Growth Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">Growth</h3>
+                        <div class="plan-price">
+                            <span class="price monthly-price">₹24,999</span>
+                            <span class="price annual-price" style="display: none;">₹19,999</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">For growing brands</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Up to 200 cases/month</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>24-hour response SLA</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Advanced analytics & trends</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Shopify/WooCommerce integration</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>10 team members</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>API access</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary btn-large">Start Free Trial</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <div class="plan-price">
+                            <span class="price">Custom</span>
+                        </div>
+                        <p class="plan-description">For large organizations</p>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Unlimited cases</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Custom SLA</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Custom analytics & reporting</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>All integrations + custom</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Unlimited team members</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Dedicated account manager</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="#10B981" />
+                                <path d="M6 10L9 13L14 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>White-label options</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn btn-outline btn-large">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Compare plans</h2>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-col">Features</th>
+                            <th>Free</th>
+                            <th>Starter</th>
+                            <th class="popular-col">Growth</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-col">Cases per month</td>
+                            <td>Unlimited</td>
+                            <td>50</td>
+                            <td>200</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Response SLA</td>
+                            <td>—</td>
+                            <td>48 hours</td>
+                            <td>24 hours</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Team members</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>10</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Analytics</td>
+                            <td>Basic</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Integrations</td>
+                            <td>—</td>
+                            <td>Email</td>
+                            <td>Shopify, WooCommerce</td>
+                            <td>All + Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">API access</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Support</td>
+                            <td>Community</td>
+                            <td>Email</td>
+                            <td>Priority</td>
+                            <td>Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently asked questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4 class="faq-question">Is there a free trial?</h4>
+                    <p class="faq-answer">Yes! All paid plans come with a 14-day free trial. No credit card required.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Can I change plans later?</h4>
+                    <p class="faq-answer">Absolutely. You can upgrade or downgrade at any time. Changes take effect
+                        immediately.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">What happens if I exceed my case limit?</h4>
+                    <p class="faq-answer">We'll notify you when you're approaching your limit. You can upgrade or
+                        purchase additional cases at ₹200 per case.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Is there a setup fee?</h4>
+                    <p class="faq-answer">No setup fees, ever. You only pay for your monthly or annual subscription.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">What payment methods do you accept?</h4>
+                    <p class="faq-answer">We accept all major credit cards, debit cards, UPI, and net banking.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Can I cancel anytime?</h4>
+                    <p class="faq-answer">Yes. Cancel anytime with no penalties. You'll have access until the end of
+                        your billing period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2 class="cta-title">Ready to get started?</h2>
+                <p class="cta-subtitle">Start your 14-day free trial today. No credit card required.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">Start Free Trial</a>
+                    <a href="#" class="btn btn-outline-light btn-large">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" fill="url(#footer-logo-gradient)" />
+                            <path d="M16 8L20 16L16 24L12 16L16 8Z" fill="white" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#0B63FF" />
+                                    <stop offset="100%" stop-color="#06B6D4" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>Resolve360</span>
+                    </div>
+                    <p class="footer-tagline">Transparent dispute resolution for the modern consumer.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <a href="index.html#how-it-works">How it works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="explore.html">Explore cases</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Resources</h4>
+                    <a href="#">Help center</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact us</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Privacy policy</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resolve360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="pricing.js"></script>
+</body>
+
+</html>
