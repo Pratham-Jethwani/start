@@ -4,9 +4,9 @@ import { User } from '../types'
 interface AuthContextType {
     user: User | null
     isAuthenticated: boolean
-    login: (email: string, password: string) => Promise<void>
+    login: (email: string, _password: string) => Promise<void>
     logout: () => void
-    signup: (name: string, email: string, password: string) => Promise<void>
+    signup: (name: string, email: string, _password: string) => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -24,7 +24,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     }, [])
 
-    const login = async (email: string, password: string) => {
+    const login = async (email: string, _password: string) => {
         // Simulate API call
         const mockUser: User = {
             id: '1',
@@ -44,7 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null)
     }
 
-    const signup = async (name: string, email: string, password: string) => {
+    const signup = async (name: string, email: string, _password: string) => {
         // Simulate API call
         const mockUser: User = {
             id: '1',
